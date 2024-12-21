@@ -1,8 +1,8 @@
 version: '3'
 services:
- challenge:
-   build: .
-   ports:
-     - "1337:1337"
-   volumes:
-     - ./:/app
+  challenge:
+    build: .
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./:/app
