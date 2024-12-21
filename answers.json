@@ -1,0 +1,14 @@
+{
+  "questions": [
+    {
+      "question": "Ai đẹp trai nhất trong câu lạc bộ?",
+      "answer": "anh Tùng",
+      "alternatives": ["Phạm Mạnh Tùng"]
+    },
+    {
+      "question": "1 + 1 = ?",
+      "answer": "3"
+    }
+  ],
+  "flag": "TASCTF{TEST_FLAG}"
+}
