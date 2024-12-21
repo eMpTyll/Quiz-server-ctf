@@ -6,7 +6,11 @@
 ``bash
 ocker compose up -d
 ``
-## 3. Expose Server to Internet using Ngrok
+## 3. Expose Server to Internet
+
+You can choose either Ngrok or JPRQ to expose your local server:
+
+### Option 1: Using Ngrok
 ### Install Ngrok on Windows
 . Visit [Ngrok download page](https://ngrok.com/download) and download
 . Install Ngrok following the instructions
@@ -36,3 +40,26 @@ c 0.tcp.ap.ngrok.io 13921
 ``
 Result when successfully connected:
 [Successful connection](image.png)
+
+### Option 2: Using JPRQ (Alternative)
+JPRQ is a free and open-source alternative for exposing local servers to the internet.
+
+#### Install JPRQ
+```bash
+curl -fsSL https://jprq.io/install.sh | sudo bash
+```
+
+#### Authentication
+1. Get your authentication token from [JPRQ Auth Page](https://jprq.io/auth)
+2. Authenticate using the token:
+```bash
+jprq auth <your-auth-token>
+```
+
+#### Expose Server
+Run the following command to expose the TCP server:
+```bash
+jprq tcp 1337
+```
+
+The command will display a URL and port that you can use to connect to your server.
