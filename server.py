@@ -31,7 +31,7 @@ def main():
             return
 
     if correct_answers == len(questions):
-        print(f"\nChúc mừng! Flag của thầy: {flag}")
+        print(f"\nChúc mừng! Thần tài tới, thần tài tới: {flag}")
     else:
         print("\nXin lỗi, bạn không trả lời đúng tất cả câu hỏi.")
 
