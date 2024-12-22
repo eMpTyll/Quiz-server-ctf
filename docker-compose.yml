@@ -1,8 +1,14 @@
 version: '3'
 services:
   challenge:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "1337:1337"
     volumes:
-      - ./:/app
+      - ./:/home/user
+    security_opt:
+      - seccomp:unconfined
+    privileged: true
+    init: true

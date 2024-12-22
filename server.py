@@ -34,30 +34,9 @@ def main():
         print(f"\nCongratulations! Here's your flag: {flag}")
     else:
         print("\nSorry, you didn't answer all questions correctly.")
-# ... existing code ...
+
 if __name__ == "__main__":
     try:
-        # Thêm netcat để lắng nghe kết nối
-        import socket
-        server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        server.bind(('0.0.0.0', 1337))
-        server.listen(1)
-        
-        print("Server is listening on port 1337...")
-        while True:
-            client, addr = server.accept()
-            try:
-                # Redirect stdin/stdout to socket
-                import sys
-                sys.stdin = client.makefile('r')
-                sys.stdout = client.makefile('w')
-                main()
-            except Exception as e:
-                print(f"\nAn error occurred. Exiting...")
-            finally:
-                client.close()
-    except KeyboardInterrupt:
-        print("\nExiting...")
-        server.close()
+        main()
     except Exception as e:
-        print(f"\nAn error occurred. Exiting...")
+        print(f"\nAn error occurred: {e}")
