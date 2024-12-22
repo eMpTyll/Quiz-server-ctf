@@ -19,24 +19,24 @@ def main():
     correct_answers = 0
 
     for i, question in enumerate(questions, start=1):
-        print(f"\nQuestion {i}:")
+        print(f"\nCâu hỏi {i}:")
         print(question["question"])
-        user_answer = input("Your answer: ").strip()
+        user_answer = input("Câu trả lời: ").strip()
 
         if check_answer(question, user_answer):
-            print("Correct!")
+            print("Chính xác. Good job, em!")
             correct_answers += 1
         else:
-            print("Incorrect! Exiting...")
+            print("Đáp án sai! Cố gắng thêm nhé :D")
             return
 
     if correct_answers == len(questions):
-        print(f"\nCongratulations! Here's your flag: {flag}")
+        print(f"\nChúc mừng! Flag của thầy: {flag}")
     else:
-        print("\nSorry, you didn't answer all questions correctly.")
+        print("\nXin lỗi, bạn không trả lời đúng tất cả câu hỏi.")
 
 if __name__ == "__main__":
     try:
         main()
     except Exception as e:
-        print(f"\nAn error occurred: {e}")
+        print(f"\nCó lỗi xảy ra: {e}")
